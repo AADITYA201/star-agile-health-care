@@ -2,7 +2,7 @@
     agent any
 
     environment {
-        IMAGE_NAME = 'aaditya201/medicure-service'
+        IMAGE_NAME =  'aadi7898/medicure' 
     }
 
     stages {
