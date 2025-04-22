@@ -1,8 +1,8 @@
- pipeline {
+pipeline {
     agent any
 
     environment {
-        IMAGE_NAME =  'aadi7898/medicure' 
+        IMAGE_NAME = 'aadi7898/medicure' 
     }
 
     stages {
@@ -28,6 +28,12 @@
                         dockerImage.push()
                     }
                 }
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                sh 'kubectl apply -f k8s/deployment.yaml'
             }
         }
     }
